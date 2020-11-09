@@ -33,13 +33,11 @@ public class Post {
 
     private String publisher;
 
-    @OneToMany
-    @JoinColumn(name="rating_id")
+    @OneToMany(mappedBy="post")
     private List<Rating> ratings = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="like_id")
-    private Like like;
+    @OneToMany(mappedBy="post")
+    private List<Like> likes = new ArrayList<>();
 
     private LocalDateTime createDate;
 
