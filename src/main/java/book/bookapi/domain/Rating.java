@@ -15,6 +15,8 @@ public class Rating {
     @Column(name="rating_id")
     private Long id;
 
+    private String rating;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

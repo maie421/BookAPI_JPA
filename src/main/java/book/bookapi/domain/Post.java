@@ -21,6 +21,8 @@ public class Post {
     @JoinColumn(name="user_id")
     private User user;
 
+    private String body;
+
     private String score;
 
     private String thumbnail;
