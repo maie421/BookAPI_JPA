@@ -21,6 +21,8 @@ public class Post {
     @JoinColumn(name="user_id")
     private User user;
 
+    private String score;
+
     private String thumbnail;
 
     private String isbn;
@@ -29,7 +31,7 @@ public class Post {
 
     private String authors;
 
-    private String contents;
+    private String content;
 
     private String publisher;
 

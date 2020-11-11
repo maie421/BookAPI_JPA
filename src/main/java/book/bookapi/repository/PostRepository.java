@@ -28,5 +28,4 @@ public class PostRepository {
         return em.find(Post.class,id);
     }
 
-
 }
