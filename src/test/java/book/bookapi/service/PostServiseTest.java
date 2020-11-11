@@ -24,10 +24,12 @@ class PostServiseTest {
     PostRepository postRepository;
     @Autowired
     PostServise postServise;
+    @Autowired
+    UserService userService;
 
     @Test
+    @Rollback(value = false)
     public void 포스트저장() throws Exception {
-        // Given
         Post post= new Post();
         post.setContent("테스트 중입니다");
         post.setScore("5");
@@ -36,7 +38,6 @@ class PostServiseTest {
         post.setPublisher("한빛");
         post.setTitle("PHP");
         post.setThumbnail("123");
-
         // When
         Long postId=postServise.postSave(post);
         // Then
@@ -64,6 +65,7 @@ class PostServiseTest {
     }
     @Test
     public void 전체포스트() throws Exception {
+
         // Given
         Post post= new Post();
         post.setContent("테스트 중입니다");
