@@ -32,7 +32,7 @@ public class UserServiceTest {
         User user = new User();
         user.setName("kim");
         //When
-        Long saveId = userService.Join(user);
+        Long saveId = userService.join(user);
         //Then
         assertEquals(user, userRepository.findOne(saveId));
     }
@@ -48,7 +48,7 @@ public class UserServiceTest {
         User user2 = new User();
         user2.setName(name);
         //When
-        userService.Join(user1);
+        userService.join(user1);
 
         //Then
 /*        assertThrows(IllegalStateException.class, () -> {
@@ -56,7 +56,7 @@ public class UserServiceTest {
            fail("이미 존재하는 회원입니다.");
         });*/
 
-        IllegalStateException thrown = assertThrows(IllegalStateException.class, () ->userService.Join(user2));
+        IllegalStateException thrown = assertThrows(IllegalStateException.class, () ->userService.join(user2));
         assertEquals("이미 존재하는 회원입니다", thrown.getMessage());
     }
 
@@ -68,9 +68,9 @@ public class UserServiceTest {
         userRepository.save(user);
 
         // When
-        userService.update(1L,"테스트 업데이트");
+        Long userid=userService.update(1L,"테스트 업데이트");
         // Then
-        assertEquals("테스트 업데이트", userRepository.findOne(1L).getName());
+        assertEquals(user, userRepository.findOne(userid));
     }
     @Test
     public void 전체회원() {

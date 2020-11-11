@@ -19,7 +19,7 @@ public class UserService {
      * 회원가입
      */
     @Transactional
-    public Long Join(User user){
+    public Long join(User user){
         validateDuplicateMember(user);
         userRepository.save(user);
         return user.getId();
@@ -46,8 +46,9 @@ public class UserService {
      * 회원 수정
      */
     @Transactional
-    public void update(Long id,String name){
+    public Long update(Long id,String name){
         User user=userRepository.findOne(id);
         user.setName(name);
+        return user.getId();
     }
 }
