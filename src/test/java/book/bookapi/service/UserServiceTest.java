@@ -68,7 +68,7 @@ public class UserServiceTest {
         userRepository.save(user);
 
         // When
-        Long userid=userService.update(1L,"테스트 업데이트");
+        Long userid=userService.update(user.getId(),"테스트 업데이트");
         // Then
         assertEquals(user, userRepository.findOne(userid));
     }
@@ -86,6 +86,19 @@ public class UserServiceTest {
         int resultCount=result.size();
         //then
         assertTrue(resultCount==2,"회원수가 같습니다");
+    }
+    @Test
+    public void 회원탈퇴() throws Exception {
+        // Given
+        User user1 = new User();
+        user1.setName("spring1");
+        userRepository.save(user1);
+        // When
+        userService.delete(user1.getId());
+        List<User> result = userRepository.findAll();
+        int resultCount=result.size();
+        // Then
+        assertTrue(resultCount==0,"삭제 완료");
     }
 
 }

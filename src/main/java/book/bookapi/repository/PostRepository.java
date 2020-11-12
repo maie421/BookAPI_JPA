@@ -1,6 +1,7 @@
 package book.bookapi.repository;
 
 import book.bookapi.domain.Post;
+import book.bookapi.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -28,4 +29,9 @@ public class PostRepository {
         return em.find(Post.class,id);
     }
 
+    public void delete(Long id){
+        Post post = em.find(Post.class, id); // 삭제할 대상 엔티티 조회
+
+        em.remove(post);
+    }
 }

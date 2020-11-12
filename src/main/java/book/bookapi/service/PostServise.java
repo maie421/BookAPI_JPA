@@ -1,7 +1,9 @@
 package book.bookapi.service;
 
 import book.bookapi.domain.Post;
+import book.bookapi.domain.User;
 import book.bookapi.repository.PostRepository;
+import book.bookapi.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,11 +16,14 @@ import java.util.List;
 public class PostServise {
 
     private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
     @Transactional
-    public Long postSave(Post post){
-        postRepository.save(post);
-        return post.getId();
+    public Post postSave(Long user_id,Post post){
+        User user=userRepository.findOne(user_id);
+        Post post1=Post.CreatePost(user,post);
+        postRepository.save(post1);
+        return post1;
     }
 
     @Transactional
@@ -35,5 +40,10 @@ public class PostServise {
 
     public Post findOne(Long id){
         return postRepository.findOne(id);
+    }
+
+    @Transactional
+    public void delete(Long id){
+        postRepository.delete(id);
     }
 }

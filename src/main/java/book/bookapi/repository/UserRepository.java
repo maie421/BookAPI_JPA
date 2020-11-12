@@ -1,5 +1,6 @@
 package book.bookapi.repository;
 
+import book.bookapi.domain.Post;
 import book.bookapi.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -33,5 +34,10 @@ public class UserRepository {
         return em.createQuery("select u from User u where u.name = :name",User.class)
                 .setParameter("name",name)
                 .getResultList();
+    }
+
+    public void delete(Long id){
+        User user = em.find(User.class, id); // 삭제할 대상 엔티티 조회
+        em.remove(user); // 엔티티 삭제
     }
 }

@@ -45,4 +45,21 @@ public class Post {
 
     private LocalDateTime createDate;
 
+    //==생성 메서드==//
+    public static Post CreatePost(User user,Post post){
+        Post postsave=new Post();
+        postsave.setContent(post.getContent());
+        postsave.setScore(post.getScore());
+        postsave.setAuthors(post.getAuthors());
+        postsave.setIsbn(post.getIsbn());
+        postsave.setPublisher(post.getPublisher());
+        postsave.setTitle(post.getTitle());
+        postsave.setThumbnail(post.getThumbnail());
+        postsave.setBody(post.getBody());
+        postsave.setCreateDate(LocalDateTime.now());
+        postsave.setUser(user);
+
+        return postsave;
+    }
+
 }

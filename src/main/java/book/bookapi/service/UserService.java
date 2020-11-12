@@ -51,4 +51,12 @@ public class UserService {
         user.setName(name);
         return user.getId();
     }
+    /**
+     * 회원탈퇴
+     */
+    @Transactional
+    public void delete(Long id){
+        userRepository.delete(id);
+    }
+
 }

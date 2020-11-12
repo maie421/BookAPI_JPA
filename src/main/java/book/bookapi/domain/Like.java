@@ -15,7 +15,7 @@ public class Like {
     @Column(name="like_id")
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -23,5 +23,11 @@ public class Like {
     @JoinColumn(name="post_id")
     private Post post;
 
-    private LocalDateTime createDate;
+    //== 생성 매서드 ==//
+    public static Like createLike(User user, Post post){
+        Like like=new Like();
+        like.setPost(post);
+        like.setUser(user);
+        return like;
+    }
 }
