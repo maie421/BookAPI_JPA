@@ -4,6 +4,7 @@ import book.bookapi.domain.Like;
 import book.bookapi.domain.Post;
 import book.bookapi.domain.Rating;
 import book.bookapi.domain.User;
+import book.bookapi.repository.PostRepository;
 import book.bookapi.service.PostServise;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,11 @@ import static java.util.stream.Collectors.toList;
 public class PostApiController {
 
     private final PostServise postServise;
+    private final PostRepository postRepository;
 
+    /**
+     * 포스트 출력
+    */
     @GetMapping("/api/v1/posts")
     public List<Post> postV1(){
         return postServise.findAll();
@@ -38,6 +43,15 @@ public class PostApiController {
                 .collect(toList());
         return result;
     }
+
+/*    @GetMapping("/api/v3/posts")
+    public List<PostDto> postV3(){
+        List<Post> posts = postRepository.findfetchAll();
+        List<PostDto> result= posts.stream()
+                .map(p->new PostDto(p))
+                .collect(toList());
+        return result;
+    }*/
 
     /**
      * 포스트 입력
@@ -134,7 +148,7 @@ public class PostApiController {
 
             name=post.getUser().getName();
             likes=post.getLikes().stream()
-                    .map(like->new LikesDto(like))
+                    .map(l->new LikesDto(l))
                     .collect(toList());
 
             rating=post.getRatings().stream()

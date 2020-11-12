@@ -32,6 +32,7 @@ class LikeServiceTest {
 
 
     @Test
+    @Rollback(value = false)
     public void 좋아요저장() throws Exception {
         // Given
         User user = new User();

@@ -25,6 +25,13 @@ public class PostRepository {
                 .getResultList();
     }
 
+/*    public List<Post> findfetchAll(){
+        return em.createQuery(
+                "select distinct p from Post p" +
+                            " join fetch p.ratings" +
+                            " join fetch p.likes" , Post.class)
+                .getResultList();
+    }*/
     public Post findOne(Long id){
         return em.find(Post.class,id);
     }
