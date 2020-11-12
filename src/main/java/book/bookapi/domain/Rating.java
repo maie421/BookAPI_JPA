@@ -17,7 +17,7 @@ public class Rating {
 
     private String rating;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -27,4 +27,13 @@ public class Rating {
 
     private LocalDateTime createDate;
 
+    //== 생성메소드 ==//
+    public static Rating createRating(User user,Post post,String text){
+        Rating rating=new Rating();
+        rating.setUser(user);
+        rating.setPost(post);
+        rating.setRating(text);
+        rating.setCreateDate(LocalDateTime.now());
+        return rating;
+    }
 }
