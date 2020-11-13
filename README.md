@@ -10,6 +10,7 @@
 <h4>클라우드 : EC2, RDS </h4>
 <h3>API</h3>
 https://github.com/maie421/BookAPI_JPA/tree/master/src/main/java/book/bookapi/api <br/>
+<img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left">
 
 <h3>Git-flow 방법 사용</h3>
 참고 https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html <br/>
