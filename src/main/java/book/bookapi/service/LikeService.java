@@ -30,12 +30,19 @@ public class LikeService {
 
     @Transactional
     public Like save(Long userId,Long postId){
-        Post post = postRepository.findOne(postId);
         User user = userRepository.findOne(userId);
-
+        validateUser(user);
+        Post post = postRepository.findOne(postId);
         Like like=Like.createLike(user,post);
         likeReopository.save(like);
         return like;
+    }
+
+    private void validateUser(User user) {
+        List<Like> likeUser= likeReopository.findByUserId(user);
+        if(!likeUser.isEmpty()) {
+            throw new IllegalStateException("이미 좋아요를 클릭하였습니다.");
+        }
     }
 
 

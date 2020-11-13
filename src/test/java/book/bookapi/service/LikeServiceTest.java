@@ -32,7 +32,6 @@ class LikeServiceTest {
 
 
     @Test
-    @Rollback(value = false)
     public void 좋아요저장() throws Exception {
         // Given
         User user = new User();
@@ -55,6 +54,32 @@ class LikeServiceTest {
         Like like=likeService.save(user.getId(), post1.getId());
         // Then
         assertEquals(like,likeReopository.findOne(like.getId()));
+    }
+    @Test
+    public void 좋아요_중복회원_예외() throws Exception {
+        // Given
+        User user = new User();
+        user.setName("테스트");
+        userService.join(user);
+
+        Post post= new Post();
+        post.setContent("테스트 중입니다");
+        post.setScore("5");
+        post.setAuthors("작가");
+        post.setIsbn("123");
+        post.setPublisher("한빛");
+        post.setTitle("PHP");
+        post.setThumbnail("123");
+        post.setAuthors("홍길동");
+        post.setBody("재미있습니다");
+        Post post1=postServise.postSave(user.getId(), post);
+        likeService.save(user.getId(), post1.getId());
+        // When
+        // Then
+        IllegalStateException thrown = assertThrows(IllegalStateException.class,
+                ()->likeService.save(user.getId(), post1.getId()));
+        assertEquals("이미 좋아요를 클릭하였습니다.",thrown.getMessage());
+
     }
 
     @Test

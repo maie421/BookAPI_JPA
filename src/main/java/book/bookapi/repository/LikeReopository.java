@@ -36,4 +36,9 @@ public class LikeReopository {
         em.remove(like);
     }
 
+    public List<Like> findByUserId(User user){
+        return  em.createQuery("select l from Like l where l.user = :user",Like.class)
+                .setParameter("user",user)
+                .getResultList();
+    }
 }
