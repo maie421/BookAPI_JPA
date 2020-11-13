@@ -7,10 +7,7 @@
 <h3>기술 스택</h3>
 <h4>서버언어 : JAVA8, Spring boot 2.X, JPA </h4>
 <h4>데이터베이스 : Mysql 8.0</h4>
-<br>
 <h4>클라우드 : EC2, RDS </h4>
-<br>
-
 <h3>API</h3>
 https://github.com/maie421/BookAPI_JPA/tree/master/src/main/java/book/bookapi/api <br/>
 
