@@ -4,10 +4,9 @@
 <ul>
   <li>참여도: 개인프로젝트</li>
 </ul>
-<h3>기술 스택</h3>
-<h4>서버언어 : JAVA8, Spring boot 2.X, JPA </h4>
-<h4>데이터베이스 : Mysql 8.0</h4>
-<h4>클라우드 : EC2, RDS </h4>
+<h3>사용 기술 및 환경</h3>
+<h4>Spring boot, Gradle, JPA, Docker, Mysql, Jenkins,Java8, AWS</h4>
+
 <h3>API</h3>
 https://github.com/maie421/BookAPI_JPA/tree/master/src/main/java/book/bookapi/api <br/>
 <img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left">
