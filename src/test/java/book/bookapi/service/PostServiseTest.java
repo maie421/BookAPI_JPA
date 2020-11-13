@@ -44,9 +44,9 @@ class PostServiseTest {
         post.setThumbnail("123");
         post.setBody("바디 입니다");
         post.setCreateDate(LocalDateTime.now());
-       // post.setUser(user);
+        // post.setUser(user);
         // When
-       Post post1= postServise.postSave(user.getId(), post);
+        Post post1= postServise.postSave(user.getId(), post);
         // Then
         assertEquals(post1,postRepository.findOne(post1.getId()));
     }

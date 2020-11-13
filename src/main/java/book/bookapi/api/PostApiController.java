@@ -36,12 +36,12 @@ public class PostApiController {
     }
 
     @GetMapping("/api/v2/posts")
-    public List<PostDto> postV2(){
+    public Result postV2(){
         List<Post> posts = postServise.findAll();
         List<PostDto> result= posts.stream()
                 .map(p->new PostDto(p))
                 .collect(toList());
-        return result;
+        return new Result(result);
     }
 
 /*    @GetMapping("/api/v3/posts")
@@ -91,6 +91,11 @@ public class PostApiController {
         postServise.delete(id);
     }
 
+    @Data
+    @AllArgsConstructor
+    class Result<T>{
+        private T data;
+    }
     @Data
     static class UpdatePostRequest{
         private String content;
