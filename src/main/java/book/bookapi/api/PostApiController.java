@@ -29,11 +29,6 @@ public class PostApiController {
     /**
      * 포스트 출력
     */
-    @GetMapping("/api/v1/posts")
-    public List<Post> postV1(){
-        return postServise.findAll();
-
-    }
 
     @GetMapping("/api/v2/posts")
     public Result postV2(){

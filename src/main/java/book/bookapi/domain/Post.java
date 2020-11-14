@@ -37,10 +37,11 @@ public class Post {
 
     private String publisher;
 
-    @OneToMany(mappedBy="post")
+    @OneToMany(mappedBy="post", cascade = CascadeType.ALL)
+    @OrderBy("createDate DESC")
     private List<Rating> ratings = new ArrayList<>();
 
-    @OneToMany(mappedBy="post")
+    @OneToMany(mappedBy="post" , cascade = CascadeType.ALL)
     private List<Like> likes = new ArrayList<>();
 
     private LocalDateTime createDate;
