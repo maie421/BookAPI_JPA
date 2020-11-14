@@ -79,7 +79,6 @@ class LikeServiceTest {
         IllegalStateException thrown = assertThrows(IllegalStateException.class,
                 ()->likeService.save(user.getId(), post1.getId()));
         assertEquals("이미 좋아요를 클릭하였습니다.",thrown.getMessage());
-
     }
 
     @Test
