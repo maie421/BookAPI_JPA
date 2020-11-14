@@ -75,4 +75,8 @@ public class InitDB {
             return rating;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> develop
