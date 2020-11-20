@@ -8,7 +8,23 @@
 <h4>Spring boot, Gradle, JPA, Docker, Mysql, Jenkins,Java8, AWS</h4>
 
 <h3>API</h3>
-https://github.com/maie421/BookAPI_JPA/tree/master/src/main/java/book/bookapi/api <br/>
+주소 http://13.209.64.185:5000</br>
+<h4>GET</h4> 
+/api/v2/posts <br/>
+/api/v2/like <br/>
+
+<h4>POST</h4>
+/api/v2/posts <br/>
+/api/v2/rating <br/>
+/api/v2/users <br/>
+
+<h4>PATCH</h4>
+/api/v2/posts/{id} <br/>
+/api/v2/rating/{id} <br/>
+/api/v2/users/{id} <br/>
+
+<h4>DELETE</h4>
+/api/v2/like/{id} <br/>
 <img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left">
 
 <h3>Git-flow 방법 사용</h3>
