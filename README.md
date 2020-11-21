@@ -9,21 +9,21 @@
 
 <h3>API</h3>
 주소 http://13.209.64.185:5000</br>
-<h4>GET</h4> </br>
+<h4>GET</h4> 
 /api/v2/posts</br>
 /api/v2/like</br>
 
-<h4>POST</h4></br>
+<h4>POST</h4>
 /api/v2/posts</br>
 /api/v2/rating</br>
 /api/v2/users</br>
 
-<h4>PATCH</h4></br>
+<h4>PATCH</h4>
 /api/v2/posts/{id}</br>
 /api/v2/rating/{id}</br>
 /api/v2/users/{id}</br>
 
-<h4>DELETE</h4></br>
+<h4>DELETE</h4>
 /api/v2/like/{id}</br></br>
 
 <img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left">
