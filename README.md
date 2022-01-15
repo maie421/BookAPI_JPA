@@ -5,7 +5,7 @@
   <li>참여도: 개인프로젝트</li>
 </ul>
 <h3>사용 기술 및 환경</h3>
-<h4>Spring boot, Gradle, JPA, Docker, Mysql, Jenkins,Java8, AWS</h4>
+<h4>Spring boot, Gradle, JPA, Docker, Mysql, Jenkins,Java8, EC2 ,RDS</h4>
 
 <h3>API</h3>
 주소 http://13.209.64.185:5000</br>
