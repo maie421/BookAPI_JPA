@@ -34,10 +34,6 @@ master : 제품으로 출시될 수 있는 브랜치<br/>
 develop : 다음 출시 버전을 개발하는 브랜치<br/>
 feature : 기능을 개발하는 브랜치 <br/>
 
-<h3>CI</h3>
-Jenkins : 로컬환경에서 사용(feat. Docker)<br/>
-master 권한으로 업로드시 자동 build<br/>
-
 <h3>CD</h3>
 Docker 이미지를 제작하여 배포합니다.<br/>
 CI 서버에서 빌드 완료시 Shell script가 작동하여 빌드된 이미지가 docker hub에 저장됩니다.<br/>
